@@ -1,13 +1,29 @@
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
+import com.opencsv.exceptions.CsvException;
+import com.opencsv.exceptions.CsvValidationException;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.*;
+
 public class Main {
     public static Base base;
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException, CsvException {
         File baseJSONFile = new File("Base.json");
         newOrNo(baseJSONFile);
+
+//        System.out.println(allData);
+//        String texts = Arrays.toString(data.get(1));
+//        String textsnew = texts.replaceAll("\\[|\\]", "");
+//        System.out.println(textsnew);
+//        String[] textss = textsnew.split(" ");
+//        System.out.println(textss[0]);
 
         try (ServerSocket server = new ServerSocket(8989)) {
             while (true) {
