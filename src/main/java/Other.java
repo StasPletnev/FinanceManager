@@ -7,7 +7,7 @@ public class Other {
         this.sum = sum;
     }
 
-    public void spendMoney(int sum){
+    public void spendMoney(int sum) {
         this.sum -= sum;
     }
 

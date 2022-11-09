@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+
 import java.io.*;
 
 
@@ -14,7 +15,7 @@ public class Request {
         this.sum = sum;
     }
 
-    public void JSONRequest(){
+    public void JSONRequest() {
         File file = new File("JSONRequest.json");
         Gson gson = new Gson();
         try (FileWriter fileGSON = new FileWriter(String.valueOf(file))) {
